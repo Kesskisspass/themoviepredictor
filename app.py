@@ -32,8 +32,11 @@ elif args.action == 'import':
         with open(f'{args.file}', newline='') as csvfile:
             reader = csv.reader(csvfile)
             for row in reader:
-                print(row[2])
+                print(reader[0], row[2], row[3])
     else:
         print("Veuillez entrer un nom de fichier à lire")
 else:
     print('sdkjsqslfd')
+
+cursor.close()
+mariadb_connection.close()
